@@ -22,7 +22,7 @@ public class chace extends Goal {
 
     @Override
     public void tick() {
-        Player player = mob.level().getNearestPlayer(mob, 256);
+        Player player = mob.level().getNearestPlayer(mob, 256);//追跡距離
         if (player != null) {
             if (mob instanceof ZombifiedPiglin || mob instanceof Zombie || mob instanceof Creeper || mob instanceof WitherSkeleton || mob instanceof PiglinBrute || mob instanceof Vindicator || mob instanceof Drowned) {
                 double player_x = player.getX();
