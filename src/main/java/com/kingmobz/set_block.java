@@ -45,8 +45,6 @@ public class set_block extends Goal {
                 mob.level().setBlock(posion, Blocks.DEEPSLATE.defaultBlockState(), 3);
             }else if(mob_y <= player_y) {
                 System.out.println("diff = " + Math.abs(mob.getY() - player.getY()));
-                //下２行俺の自作AI改良のほうが安定してるか調べる
-                //モブに横方向に慣性？とかつける…まぁ弱めのダッシュ的なことさせればわんちゃん？
                 BlockPos posion = mob.blockPosition().below();
                 mob.level().setBlock(posion, Blocks.DEEPSLATE.defaultBlockState(), 3);
             }
