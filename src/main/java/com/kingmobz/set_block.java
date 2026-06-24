@@ -27,7 +27,6 @@ public class set_block extends Goal {
             return false;
         }
     }
-
     @Override
     public void tick() {
         Player player = mob.level().getNearestPlayer(mob, 32);
