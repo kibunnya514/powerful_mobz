@@ -14,6 +14,7 @@ public class addgoals {
         Mob mobuireruyatu = event.getEntity();
         if (mobuireruyatu instanceof Monster) {
             mobuireruyatu.goalSelector.addGoal(6, new set_block(mobuireruyatu));
+            mobuireruyatu.goalSelector.addGoal(2, new chace(mobuireruyatu));
         }
     }
 }
