@@ -24,6 +24,7 @@ public class brake_block extends Goal {
     @Override
     public boolean canUse() {
        //条件
+        return true;
     }
     @Override
     public void tick() {
