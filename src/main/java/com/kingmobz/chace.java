@@ -20,12 +20,8 @@ public class chace extends Goal {
     @Override
     public boolean canUse() {
         BlockPos pos = mob.blockPosition().below();
-        BlockState state = mob.level().getBlockState(pos);
-
-        if (state.is(Blocks.COBBLESTONE)) {
+        BlockState state = mob.level().getBlockState(pos);{
             return true;
-        } else {
-            return false;
         }
     }
 

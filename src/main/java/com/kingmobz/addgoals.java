@@ -15,6 +15,7 @@ public class addgoals {
         if (mobuireruyatu instanceof Monster) {
             mobuireruyatu.goalSelector.addGoal(6, new set_block(mobuireruyatu));
             mobuireruyatu.goalSelector.addGoal(2, new chace(mobuireruyatu));
+            mobuireruyatu.goalSelector.addGoal(8, new brake_block(mobuireruyatu));
         }
     }
 }
