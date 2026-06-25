@@ -4,6 +4,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.MobSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -15,10 +16,20 @@ public class set_Item {
     @SubscribeEvent
     public static void onSpawn(MobSpawnEvent.FinalizeSpawn event) {
         LivingEntity mobitem_set = event.getEntity();
+        Level time_day = mobitem_set.level();
+        int sokoage = 0;
+        long day =time_day.getLevelData().getGameTime() / 24000L;
+        long mob_armoradd = day;
+        if(mob_armoradd >= 100) {
+            sokoage = (int) (mob_armoradd - 100)/5+5;
+        }
         int sord = 0;
         sord = mobitem_set.getRandom().nextInt(5);
         if (sord == 0) {
-            int wh = mobitem_set.getRandom().nextInt(100) + 1;
+            int wh = mobitem_set.getRandom().nextInt(100+ (int)mob_armoradd) -70 +sokoage;
+            if (wh < 0) {
+                wh = wh + mobitem_set.getRandom().nextInt(55+ (int)mob_armoradd);
+            }
             if (wh >= 95) {
                 mobitem_set.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.NETHERITE_SWORD));
             } else if (wh >= 80) {
@@ -33,7 +44,10 @@ public class set_Item {
         }
 
         if (sord == 1) {
-            int wh = mobitem_set.getRandom().nextInt(100) + 1;
+            int wh = mobitem_set.getRandom().nextInt(100+ (int)mob_armoradd) -70 +sokoage;
+            if (wh < 0) {
+                wh = wh + mobitem_set.getRandom().nextInt(55+ (int)mob_armoradd);
+            }
             if (wh >= 95) {
                 mobitem_set.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.NETHERITE_AXE));
             } else if (wh >= 80) {
@@ -47,7 +61,10 @@ public class set_Item {
             }
         }
 
-        int head = mobitem_set.getRandom().nextInt(100) + 1;
+        int head = mobitem_set.getRandom().nextInt(100+ (int)mob_armoradd) -70 +sokoage;
+        if (head < 0) {
+            head = head + mobitem_set.getRandom().nextInt(55+ (int)mob_armoradd);;
+        }
         if (head >= 90) {
             mobitem_set.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.NETHERITE_HELMET));
         } else if (head >= 70) {
@@ -62,7 +79,10 @@ public class set_Item {
             mobitem_set.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.LEATHER_HELMET));
         }
 
-        int chest = mobitem_set.getRandom().nextInt(100) + 1;
+        int chest = mobitem_set.getRandom().nextInt(100+ (int)mob_armoradd) -70 +sokoage;
+        if (chest < 0) {
+            chest = chest + mobitem_set.getRandom().nextInt(55+ (int)mob_armoradd);;
+        }
         if (chest >= 90) {
             mobitem_set.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.NETHERITE_CHESTPLATE));
         } else if (chest >= 70) {
@@ -77,7 +97,10 @@ public class set_Item {
             mobitem_set.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.LEATHER_CHESTPLATE));
         }
 
-        int legs = mobitem_set.getRandom().nextInt(100) + 1;
+        int legs = mobitem_set.getRandom().nextInt(100+ (int)mob_armoradd) -70 +sokoage;
+        if (legs < 0) {
+            legs = legs + mobitem_set.getRandom().nextInt(55+ (int)mob_armoradd);;
+        }
         if (legs >= 90) {
             mobitem_set.setItemSlot(EquipmentSlot.LEGS, new ItemStack(Items.NETHERITE_LEGGINGS));
         } else if (legs >= 70) {
@@ -92,7 +115,10 @@ public class set_Item {
             mobitem_set.setItemSlot(EquipmentSlot.LEGS, new ItemStack(Items.LEATHER_LEGGINGS));
         }
 
-        int feet = mobitem_set.getRandom().nextInt(100) + 1;
+        int feet = mobitem_set.getRandom().nextInt(100+ (int)mob_armoradd) -70 +sokoage;
+        if (feet < 0) {
+            feet = feet + mobitem_set.getRandom().nextInt(55+ (int)mob_armoradd);;
+        }
         if (feet >= 90) {
             mobitem_set.setItemSlot(EquipmentSlot.FEET, new ItemStack(Items.NETHERITE_BOOTS));
         } else if (feet >= 70) {
@@ -112,7 +138,7 @@ public class set_Item {
         ItemStack chest_en = mobitem_set.getItemBySlot(EquipmentSlot.CHEST);
         ItemStack legs_en = mobitem_set.getItemBySlot(EquipmentSlot.LEGS);
         ItemStack feet_en = mobitem_set.getItemBySlot(EquipmentSlot.FEET);
-        int which = mobitem_set.getRandom().nextInt(100) + 1;
+        int which = mobitem_set.getRandom().nextInt(100+ (int)mob_armoradd) -70 +sokoage;
         int number = 0;
         int TF = 0;
         TF = mobitem_set.getRandom().nextInt(3);
