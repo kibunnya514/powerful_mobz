@@ -33,7 +33,7 @@ public class chace extends Goal {
                 double player_x = player.getX();
                 double player_y = player.getY();
                 double player_z = player.getZ();
-                mob.getMoveControl().setWantedPosition(player_x, player_y, player_z, 1.8);
+                mob.getMoveControl().setWantedPosition(player_x, player_y, player_z, 1.6);
             }
         }
     }

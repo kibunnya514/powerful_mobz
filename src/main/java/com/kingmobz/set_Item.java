@@ -16,7 +16,6 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
         modid = "mobzking"
 )
 public class set_Item {
-    public static int mobz_level = 0;
     @SubscribeEvent
     public static void onSpawn(MobSpawnEvent.FinalizeSpawn event) {
         LivingEntity mobitem_set = event.getEntity();

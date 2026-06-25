@@ -9,5 +9,6 @@ public class main {
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new set_Item());
         MinecraftForge.EVENT_BUS.register(new addgoals());
+        MinecraftForge.EVENT_BUS.register(new mob_stateschange());
     }
 }

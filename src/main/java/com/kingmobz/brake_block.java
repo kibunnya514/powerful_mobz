@@ -49,7 +49,7 @@ public class brake_block extends Goal {
         //爆弾設置プログラム
         int time = 0;
         Player bom_check =mob.level().getNearestPlayer(mob, 5);
-        int Random = mob.getRandom().nextInt(100);
+        int Random = mob.getRandom().nextInt(500);
         if(bom_check != null && Random == 0 && time == 0){
         //TNT設置プログラムを書く
             BlockPos pos = mob.blockPosition().above(2);
