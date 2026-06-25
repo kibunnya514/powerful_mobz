@@ -165,7 +165,7 @@ public class set_Item {
                 } else if (which >= 25) {
                     level = mobitem_set.getRandom().nextInt(4) + 1;
                     helmet_en.enchant(Enchantments.PROJECTILE_PROTECTION, level);
-                } else if (which >= 15) {
+                } else if (which >= 5) {
                     level = mobitem_set.getRandom().nextInt(4) + 1;
                     helmet_en.enchant(Enchantments.FIRE_PROTECTION, level);
                 } else if (which >= 0) {
@@ -192,7 +192,7 @@ public class set_Item {
                 } else if (which >= 25) {
                     level = mobitem_set.getRandom().nextInt(4) + 1;
                     chest_en.enchant(Enchantments.PROJECTILE_PROTECTION, level);
-                } else if (which >= 15) {
+                } else if (which >= 5) {
                     level = mobitem_set.getRandom().nextInt(4) + 1;
                     chest_en.enchant(Enchantments.FIRE_PROTECTION, level);
                 } else if (which >= 0) {
@@ -219,7 +219,7 @@ public class set_Item {
                 } else if (which >= 25) {
                     level = mobitem_set.getRandom().nextInt(4) + 1;
                     legs_en.enchant(Enchantments.PROJECTILE_PROTECTION, level);
-                } else if (which >= 15) {
+                } else if (which >= 5) {
                     level = mobitem_set.getRandom().nextInt(4) + 1;
                     legs_en.enchant(Enchantments.FIRE_PROTECTION, level);
                 } else if (which >= 0) {
@@ -246,7 +246,7 @@ public class set_Item {
                 } else if (which >= 25) {
                     level = mobitem_set.getRandom().nextInt(4) + 1;
                     feet_en.enchant(Enchantments.PROJECTILE_PROTECTION, level);
-                } else if (which >= 15) {
+                } else if (which >= 5) {
                     level = mobitem_set.getRandom().nextInt(4) + 1;
                     feet_en.enchant(Enchantments.FIRE_PROTECTION, level);
                 } else if (which >= 0) {
