@@ -54,11 +54,11 @@ public class set_block extends Goal {
                     );
 
                     BlockPos posion = mob.blockPosition().below();
-                    mob.level().setBlock(posion, Blocks.DEEPSLATE.defaultBlockState(), 3);
+                    mob.level().setBlock(posion, Blocks.COBBLESTONE.defaultBlockState(), 3);
                     time = 10;
             }else if(mob_y <= player_y) {
                 BlockPos posion = mob.blockPosition().below();
-                mob.level().setBlock(posion, Blocks.DEEPSLATE.defaultBlockState(), 3);
+                mob.level().setBlock(posion, Blocks.COBBLESTONE.defaultBlockState(), 3);
                 }
             }
         }
