@@ -16,8 +16,8 @@ public class mob_stateschange {
         if(mob instanceof Monster){
             //ステータス変更
             double level = mob.getRandom().nextInt(20) + 1;
-            Component name = mob.getName();
             mob.setCustomName(Component.literal("LV" +(int)level + " " + mob.getName().getString()));
+            //mob.setCustomNameVisible(true);←これを使って近くのプレイヤーにだけネームプレート表示する
             level = level * 0.1;
             //HP
             mob.getAttribute(Attributes.MAX_HEALTH)
