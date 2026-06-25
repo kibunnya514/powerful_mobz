@@ -27,6 +27,7 @@ public class set_block extends Goal {
     @Override
     public void tick() {
         int time = 0;
+        int time_jump = 0;
         Player player = mob.level().getNearestPlayer(mob, 32);
         if (player != null) {
             int kakuritu;
@@ -40,9 +41,6 @@ public class set_block extends Goal {
                 double player_y = player.getY();
                 if (Math.abs(mob_y - player_y) >= 1 && player != null && mob_y <= player_y && time < 0) {
                     //縦積みのプログラム
-                    Level level = mob.level();
-                    BlockPos pos = mob.blockPosition().above(3);
-                    level.destroyBlock(pos, false);
                     mob.setDeltaMovement(
                             mob.getDeltaMovement().x,
                             0.4,
@@ -63,5 +61,6 @@ public class set_block extends Goal {
             }
             time = time - 1;
         }
+        time_jump = time_jump -1;
     }
 }

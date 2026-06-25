@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 public class mob_stateschange {
     @SubscribeEvent
     public static void mobchange(MobSpawnEvent.FinalizeSpawn event) {
-        double health = 20;
+        double health = 25;
         double attack = 4;
         LivingEntity mob = event.getEntity();
         Level mobmob = mob.level();
@@ -20,7 +20,7 @@ public class mob_stateschange {
         long adddificulity = time_dificulity/50;
         if(mob instanceof Monster){
             //ステータス変更
-            double level = mob.getRandom().nextInt(20+(int)time_dificulity) + 1;
+            double level = mob.getRandom().nextInt(15+(int)time_dificulity) + 6;
             mob.setCustomName(Component.literal("LV" +(int)level + " " + mob.getName().getString()));
             level = level * 0.1;
             //HP

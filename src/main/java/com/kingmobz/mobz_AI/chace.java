@@ -27,9 +27,9 @@ public class chace extends Goal {
     @Override
     public void tick() {
         Player player = mob.level().getNearestPlayer(mob, 256);//追跡距離
-        Player nameplatecheck = mob.level().getNearestPlayer(mob, 16);//モブのネームプレートがどの程度見えるか
+        Player nameplatecheck = mob.level().getNearestPlayer(mob, 4);//モブのネームプレートがどの程度見えるか
         if (player != null) {
-            if (mob instanceof ZombifiedPiglin || mob instanceof Zombie || mob instanceof Creeper || mob instanceof WitherSkeleton || mob instanceof PiglinBrute || mob instanceof Vindicator || mob instanceof Drowned) {
+            if (mob instanceof ZombifiedPiglin || mob instanceof Zombie || mob instanceof Creeper || mob instanceof WitherSkeleton || mob instanceof PiglinBrute || mob instanceof Vindicator || mob instanceof Drowned ||mob instanceof Spider) {
                 double player_x = player.getX();
                 double player_y = player.getY();
                 double player_z = player.getZ();

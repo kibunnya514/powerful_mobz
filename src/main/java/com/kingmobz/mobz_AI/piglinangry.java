@@ -24,6 +24,5 @@ public class piglinangry {
                 mob.setAggressive(true);
             }
         }
-
     }
 }
