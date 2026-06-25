@@ -1,4 +1,4 @@
-package com.kingmobz;
+package com.kingmobz.mobz_AI;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Mob;
@@ -31,6 +31,7 @@ public class set_block extends Goal {
         if (player != null) {
             int kakuritu;
             if (mob instanceof ZombifiedPiglin || mob instanceof Zombie || mob instanceof Creeper || mob instanceof WitherSkeleton || mob instanceof PiglinBrute || mob instanceof Vindicator || mob instanceof Drowned) {
+                //モブの見てくる方向をプレイヤーに固定
                 mob.getLookControl().setLookAt(player, 30.0F, 30.0F);
                 double dx = player.getX() - mob.getX();
                 double dz = player.getZ() - mob.getZ();
@@ -38,9 +39,9 @@ public class set_block extends Goal {
                 double mob_y = mob.getY();
                 double player_y = player.getY();
                 if (Math.abs(mob_y - player_y) >= 1 && player != null && mob_y <= player_y && time < 0) {
-                    System.out.print("ジャンプ…するはず");
+                    //縦積みのプログラム
                     Level level = mob.level();
-                    BlockPos pos = mob.blockPosition().above(2);
+                    BlockPos pos = mob.blockPosition().above(3);
                     level.destroyBlock(pos, false);
                     mob.setDeltaMovement(
                             mob.getDeltaMovement().x,
@@ -53,6 +54,7 @@ public class set_block extends Goal {
                         time = 10;
                     }
                 } else if (mob_y <= player_y) {
+                    //橋を架けるプログラム
                     BlockPos posion = mob.blockPosition().below();
                     if (mob.level().getBlockState(mob.blockPosition().below()).isAir()||mob.level().getBlockState(mob.blockPosition().below()).is(Blocks.LAVA)) {
                         mob.level().setBlock(posion, Blocks.COBBLESTONE.defaultBlockState(), 3);

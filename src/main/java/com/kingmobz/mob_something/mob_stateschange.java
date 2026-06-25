@@ -1,8 +1,9 @@
-package com.kingmobz;
+package com.kingmobz.mob_something;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.MobSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -17,7 +18,6 @@ public class mob_stateschange {
             //ステータス変更
             double level = mob.getRandom().nextInt(20) + 1;
             mob.setCustomName(Component.literal("LV" +(int)level + " " + mob.getName().getString()));
-            //mob.setCustomNameVisible(true);←これを使って近くのプレイヤーにだけネームプレート表示する
             level = level * 0.1;
             //HP
             mob.getAttribute(Attributes.MAX_HEALTH)

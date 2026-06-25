@@ -1,5 +1,7 @@
-package com.kingmobz;
+package com.kingmobz.touroku;
 
+import com.kingmobz.mob_something.mob_stateschange;
+import com.kingmobz.mob_something.set_Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 

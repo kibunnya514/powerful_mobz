@@ -1,7 +1,9 @@
-package com.kingmobz;
+package com.kingmobz.touroku;
 
+import com.kingmobz.mobz_AI.brake_block;
+import com.kingmobz.mobz_AI.chace;
+import com.kingmobz.mobz_AI.set_block;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraftforge.event.entity.living.MobSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

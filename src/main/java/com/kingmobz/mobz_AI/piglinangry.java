@@ -1,4 +1,4 @@
-package com.kingmobz;
+package com.kingmobz.mobz_AI;
 
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.PathfinderMob;
