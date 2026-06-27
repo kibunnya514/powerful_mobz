@@ -12,7 +12,7 @@ public class player_debuff_process {
         Entity check_monster = event.getSource().getEntity();
         if(check_monster instanceof Monster){
             int Random = ((Monster) check_monster).getRandom().nextInt(1);
-            if(Random == 0) {
+            if(Random == 1) {
                 System.out.println("出血");
                 bleeding = 10;//単位秒
             }

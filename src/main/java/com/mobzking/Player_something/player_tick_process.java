@@ -12,8 +12,8 @@ public class player_tick_process {
 
     @SubscribeEvent
     public static void Player_tick(TickEvent.PlayerTickEvent event) {
+        //下の３行は１ティックに重複処理されないようにするため。
         Player player = event.player;
-        //下の２行は１ティックに重複処理されないようにするため。
         if (event.phase != TickEvent.Phase.END) return;
         if (event.player.level().isClientSide()) return;
         //出血中は毎秒ダメージを受ける

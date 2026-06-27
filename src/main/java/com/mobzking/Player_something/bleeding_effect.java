@@ -14,7 +14,7 @@ public class bleeding_effect {
     public static void onTick(TickEvent.PlayerTickEvent event) {
 
         Player player = event.player;
-
+        //下二行は１ティック４回処理を消すプログラム
         if (event.phase != TickEvent.Phase.END) return;
         if (!player.level().isClientSide()) return;
 

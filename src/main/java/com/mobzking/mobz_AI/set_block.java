@@ -6,10 +6,13 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-public class set_block extends Goal {
+import net.minecraftforge.event.TickEvent;
 
+public class set_block extends Goal {
+    int time_jump = 0;
     private final Mob mob;
 
     public set_block(Mob mob) {
@@ -25,8 +28,8 @@ public class set_block extends Goal {
 
     @Override
     public void tick() {
-        int time = 0;
-        int time_jump = 0;
+        //下一行ティックの重複なくす用
+        if (mob.level().isClientSide()) return;
         Player player = mob.level().getNearestPlayer(mob, 32);
         if (player != null) {
             int kakuritu;
@@ -38,8 +41,12 @@ public class set_block extends Goal {
                 mob.setYRot((float) (Math.atan2(dz, dx) * (180 / Math.PI)) - 90);
                 double mob_y = mob.getY();
                 double player_y = player.getY();
-                if (Math.abs(mob_y - player_y) >= 1 && player != null && mob_y <= player_y && time < 0) {
+                if (Math.abs(mob_y - player_y) >= 2 && mob_y < player_y && player != null && time_jump <= 0) {
                     //縦積みのプログラム
+                    System.out.print("上破壊？");
+                    Level level = mob.level();
+                    BlockPos pos = mob.blockPosition().above(2);
+                    level.destroyBlock(pos, false);
                     mob.setDeltaMovement(
                             mob.getDeltaMovement().x,
                             0.4,
@@ -48,7 +55,7 @@ public class set_block extends Goal {
                     BlockPos posion = mob.blockPosition().below();
                     if (mob.level().getBlockState(mob.blockPosition().below()).isAir()||mob.level().getBlockState(mob.blockPosition().below()).is(Blocks.LAVA)) {
                         mob.level().setBlock(posion, Blocks.COBBLESTONE.defaultBlockState(), 3);
-                        time = 10;
+                        time_jump = 10;
                     }
                 } else if (mob_y <= player_y) {
                     //橋を架けるプログラム
@@ -58,7 +65,6 @@ public class set_block extends Goal {
                     }
                 }
             }
-            time = time - 1;
         }
         time_jump = time_jump -1;
     }
