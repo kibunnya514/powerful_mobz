@@ -1,10 +1,10 @@
-package com.kingmobz.Player_something;
+package com.mobzking.Player_something;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import static com.kingmobz.Player_something.player_debuff_process.bleeding;
+import static com.mobzking.Player_something.player_debuff_process.bleeding;
 
 @Mod.EventBusSubscriber(modid = "mobzking")
 public class player_tick_process {

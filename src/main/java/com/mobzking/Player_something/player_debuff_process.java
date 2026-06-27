@@ -1,4 +1,4 @@
-package com.kingmobz.Player_something;
+package com.mobzking.Player_something;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;

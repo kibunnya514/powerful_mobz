@@ -1,8 +1,8 @@
-package com.kingmobz.touroku;
+package com.mobzking.touroku;
 
-import com.kingmobz.mobz_AI.brake_block;
-import com.kingmobz.mobz_AI.chace;
-import com.kingmobz.mobz_AI.set_block;
+import com.mobzking.mobz_AI.brake_block;
+import com.mobzking.mobz_AI.chace;
+import com.mobzking.mobz_AI.set_block;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraftforge.event.entity.living.MobSpawnEvent;

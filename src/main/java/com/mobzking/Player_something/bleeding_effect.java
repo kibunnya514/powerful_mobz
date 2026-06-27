@@ -1,6 +1,5 @@
-package com.kingmobz.Player_something;
+package com.mobzking.Player_something;
 
-import com.kingmobz.Player_something.player_debuff_process;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.TickEvent;

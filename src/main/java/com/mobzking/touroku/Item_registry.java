@@ -1,6 +1,6 @@
-package com.kingmobz.touroku;
-import com.kingmobz.Item.CureItem;
-import com.kingmobz.Item.HealItem;
+package com.mobzking.touroku;
+import com.mobzking.Item.CureItem;
+import com.mobzking.Item.HealItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -11,6 +11,6 @@ public class Item_registry {
     public static final RegistryObject<Item> MID_KIT = ITEMS.register("midkit",
             () -> new HealItem(new Item.Properties().durability(3)));
     //出血直しアイテム
-    public static final RegistryObject<Item> BAND_AID = ITEMS.register("band_aid",
+    public static final RegistryObject<Item> BAND_AGE = ITEMS.register("bandage",
             () -> new CureItem(new Item.Properties().durability(1)));
 }
