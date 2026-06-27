@@ -9,9 +9,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-public class healItem extends Item {
 
-    public healItem(Properties properties) {
+import static com.kingmobz.Player_something.player_tick_process.healing;
+
+public class HealItem extends Item {
+
+    public HealItem(Properties properties) {
         super(properties);
     }
 
@@ -34,7 +37,7 @@ public class healItem extends Item {
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
 
         if (!level.isClientSide && entity instanceof Player player) {
-            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 75, 2));
+            healing = 3;//秒単位
         }
         stack.hurtAndBreak(1, entity, p -> p.broadcastBreakEvent(entity.getUsedItemHand()));
         return stack;

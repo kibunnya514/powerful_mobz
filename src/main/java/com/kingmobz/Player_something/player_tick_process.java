@@ -8,7 +8,7 @@ import static com.kingmobz.Player_something.player_debuff_process.bleeding;
 
 @Mod.EventBusSubscriber(modid = "mobzking")
 public class player_tick_process {
-    public static int flashTime = 0;
+    public static int healing= 0;
 
     @SubscribeEvent
     public static void Player_tick(TickEvent.PlayerTickEvent event) {
@@ -21,6 +21,11 @@ public class player_tick_process {
             System.out.print(bleeding);
             player.hurt(player.damageSources().generic(), 1.0F);
             bleeding = bleeding - 1;
+        }
+        //回復アイテム処理
+        if(healing > 0 && player.tickCount % 20 == 0) {
+            player.heal(2.0F); // ハート1個分回復
+            healing = healing - 1;
         }
     }
 }
