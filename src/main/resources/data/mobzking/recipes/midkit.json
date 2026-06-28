@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "ABA",
+    "WAW"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minecraft:white_wool"
+    },
+    "B": {
+      "item": "minecraft:paper"
+    },
+    "A": {
+      "item": "mobzking:bandage"
+    }
+  },
+  "result": {
+    "item": "mobzking:midkit",
+    "count": 1
+  }
+}

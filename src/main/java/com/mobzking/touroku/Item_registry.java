@@ -12,5 +12,5 @@ public class Item_registry {
             () -> new HealItem(new Item.Properties().durability(3)));
     //出血直しアイテム
     public static final RegistryObject<Item> BAND_AGE = ITEMS.register("bandage",
-            () -> new CureItem(new Item.Properties().durability(1)));
+            () -> new CureItem(new Item.Properties().durability(1).stacksTo(4)));
 }

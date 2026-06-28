@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    " WA",
+    "WA "
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:paper"
+    },
+    "A": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "mobzking:bandage",
+    "count": 2
+  }
+}

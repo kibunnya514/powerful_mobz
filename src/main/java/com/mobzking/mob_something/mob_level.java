@@ -8,7 +8,7 @@ import net.minecraftforge.event.entity.living.MobSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = "mobzking")
-public class mob_stateschange {
+public class mob_level {
     @SubscribeEvent
     public static void mobchange(MobSpawnEvent.FinalizeSpawn event) {
         double health = 25;
@@ -16,10 +16,10 @@ public class mob_stateschange {
         LivingEntity mob = event.getEntity();
         Level mobmob = mob.level();
         long time_dificulity =mobmob.getLevelData().getGameTime() / 24000L;
-        long adddificulity = time_dificulity/50;
+        long adddificulity = time_dificulity/25;
         if(mob instanceof Monster){
             //ステータス変更
-            double level = mob.getRandom().nextInt(15+(int)time_dificulity) + 6;
+            double level = mob.getRandom().nextInt(15+(int)time_dificulity);
             mob.setCustomName(Component.literal("LV" +(int)level + " " + mob.getName().getString()));
             level = level * 0.1;
             //HP
