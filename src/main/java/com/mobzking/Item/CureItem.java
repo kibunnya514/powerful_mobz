@@ -33,8 +33,7 @@ public class CureItem extends Item {
 
         if (!level.isClientSide && entity instanceof Player player) {
             bleeding = 0;
-        }
-        stack.hurtAndBreak(1, entity, p -> p.broadcastBreakEvent(entity.getUsedItemHand()));
+        }stack.shrink(1);
         return stack;
     }
 }
