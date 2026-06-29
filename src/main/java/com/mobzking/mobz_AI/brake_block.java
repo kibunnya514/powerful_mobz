@@ -21,7 +21,11 @@ public class brake_block extends Goal {
     @Override
     public boolean canUse() {
         Player player = mob.level().getNearestPlayer(mob, 256);
-        if (player != null && mob instanceof Monster) {
+        if (player != null && mob instanceof Monster &&
+        !(mob instanceof Skeleton) &&
+        !(mob instanceof Pillager) &&
+        !(mob instanceof Blaze) &&
+        !(mob instanceof Ghast)){
             return true;
         }
         return false;

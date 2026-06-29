@@ -17,11 +17,6 @@ public class set_Item {
     @SubscribeEvent
     public static void onSpawn(MobSpawnEvent.FinalizeSpawn event) {
         LivingEntity mobitem_set = event.getEntity();
-        //ちびゾンビを湧かなくする
-        if (event.getEntity() instanceof Zombie zombie){
-            if (zombie.isBaby()) {
-                zombie.setBaby(false);
-            }
             Level time_day = mobitem_set.level();
             int sokoage = 0;
             long day = time_day.getLevelData().getGameTime() / 24000L;
@@ -288,4 +283,3 @@ public class set_Item {
             }
         }
     }
-}

@@ -33,7 +33,13 @@ public class set_block extends Goal {
         Player player = mob.level().getNearestPlayer(mob, 32);
         if (player != null) {
             int kakuritu;
-            if (mob instanceof ZombifiedPiglin || mob instanceof Zombie || mob instanceof Creeper || mob instanceof WitherSkeleton || mob instanceof PiglinBrute || mob instanceof Vindicator || mob instanceof Drowned) {
+            if (    mob instanceof ZombifiedPiglin ||
+                    mob instanceof Zombie ||
+                    mob instanceof Creeper ||
+                    mob instanceof WitherSkeleton ||
+                    mob instanceof PiglinBrute ||
+                    mob instanceof Vindicator ||
+                    mob instanceof Drowned) {
                 //モブの見てくる方向をプレイヤーに固定
                 mob.getLookControl().setLookAt(player, 30.0F, 30.0F);
                 double dx = player.getX() - mob.getX();
