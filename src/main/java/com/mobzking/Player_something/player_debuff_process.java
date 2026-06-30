@@ -9,6 +9,7 @@ public class player_debuff_process {
     public static int bleeding = 0;
     @SubscribeEvent
     public static void player_hurt(LivingHurtEvent event){
+
         Entity check_monster = event.getSource().getEntity();
         if(check_monster instanceof Monster){
             int Random = ((Monster) check_monster).getRandom().nextInt(1);

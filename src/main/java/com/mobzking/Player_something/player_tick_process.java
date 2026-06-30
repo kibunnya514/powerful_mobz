@@ -4,44 +4,56 @@ import com.mobzking.touroku.Item_registry;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import static com.mobzking.Player_something.player_debuff_process.bleeding;
 
 @Mod.EventBusSubscriber(modid = "mobzking")
 public class player_tick_process {
-    public static int healing = 0;
-    private int bahslot = 0;
 
     @SubscribeEvent
-    public static void onTick(TickEvent.PlayerTickEvent event) {
-    }
+    public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
 
-    @SubscribeEvent
-    public static void Player_tick(TickEvent.PlayerTickEvent event) {
-        //下の３行は１ティックに重複処理されないようにするため。
-        Player player = event.player;
         if (event.phase != TickEvent.Phase.END) return;
-        if (event.player.level().isClientSide()) return;
-        //出血中は毎秒ダメージを受ける
+        Player player = event.player;
+        if (player.level().isClientSide()) return;
+        var data = player.getPersistentData();
+        // 出血処理
+        int bleeding = data.getInt("bleeding");
         if (bleeding > 0 && player.tickCount % 40 == 0) {
-            System.out.print(bleeding);
-            player.hurt(player.damageSources().generic(), 1.0F);
-            bleeding = bleeding - 1;
+            player.hurt(player.damageSources().generic(), 2.0F);
+            data.putInt("bleeding", bleeding - 1);
         }
-        //回復アイテム処理
+        // 回復処理
+        int healing = data.getInt("healing");
+
         if (healing > 0 && player.tickCount % 20 == 0) {
-            player.heal(2.0F); // ハート1個分回復
-            healing = healing - 1;
+            player.heal(2.0F);
+            data.putInt("healing", healing - 1);
         }
-        //バフアイテム処理各種
-        //再生の何か
-        int check = player.getPersistentData().getInt("wear");
-        boolean which = player.getInventory().contains(new ItemStack(Item_registry.SEIMEI_NULL.get()));
-         if(check == 1 && which == true){
-            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 20, 1));
+
+        //リジェネとか何とか
+        int check = data.getInt("wear");
+        boolean whick1 = player.getInventory().hasAnyMatching(
+                stack -> stack.getItem() == Item_registry.SEIMEI_NULL.get()
+        );
+        if (check == 1 && whick1) {
+            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION,40,1));
         }
+        // 衝撃吸収とかなんとか
+        boolean which2 = player.getInventory().hasAnyMatching(
+                stack -> stack.getItem() == Item_registry.SYOGEKI_NULL.get()
+        );
+        int cooldown = data.getInt("cooldown");
+        if (check == 2 && which2) {
+            if (cooldown <= 0) {
+                player.setAbsorptionAmount(8.0F);
+                cooldown = 400;
+            }
+        }
+        if (cooldown > 0) {
+            cooldown--;
+        }
+        data.putInt("cooldown", cooldown);
     }
 }

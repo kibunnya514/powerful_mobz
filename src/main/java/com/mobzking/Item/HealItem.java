@@ -7,9 +7,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-
-import static com.mobzking.Player_something.player_tick_process.healing;
-
 public class HealItem extends Item {
 
     public HealItem(Properties properties) {
@@ -35,7 +32,7 @@ public class HealItem extends Item {
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
 
         if (!level.isClientSide && entity instanceof Player player) {
-            healing = 3;//秒単位
+            player.getPersistentData().putInt("healing", 3);//秒単位
         }
         stack.hurtAndBreak(1, entity, p -> p.broadcastBreakEvent(entity.getUsedItemHand()));
         return stack;

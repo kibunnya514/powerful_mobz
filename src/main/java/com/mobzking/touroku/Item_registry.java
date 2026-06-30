@@ -19,4 +19,9 @@ public class Item_registry {
             () -> new some_bahItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SEIMEI_NULL = ITEMS.register("seimei_null",
             () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> SYOGEKI = ITEMS.register("syogeki",
+            () -> new some_bahItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> SYOGEKI_NULL = ITEMS.register("syogeki_null",
+            () -> new Item(new Item.Properties().stacksTo(1)));
 }
+

@@ -41,6 +41,10 @@ public class some_bahItem extends Item {
                 player.getPersistentData().putInt("wear", 1);
                 stack = new ItemStack(Item_registry.SEIMEI_NULL.get());
                 player.getInventory().add(stack);
+            }else if(stack.is(Item_registry.SYOGEKI.get())){
+                player.getPersistentData().putInt("wear", 2);
+                stack = new ItemStack(Item_registry.SYOGEKI_NULL.get());
+                player.getInventory().add(stack);
             }
             stack.shrink(1);
         }
