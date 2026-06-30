@@ -9,11 +9,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
 public class brake_block extends Goal {
-    int bomb_cool = 0;
+    private int bomb_cool = 0;
     int brake_time = 0;
     int street_brake_time = 0;
     private final Mob mob;
-
+    private int Random,kamase;
     public brake_block(Mob mob) {
         this.mob = mob;
     }
@@ -52,14 +52,18 @@ public class brake_block extends Goal {
         }
         //爆弾設置プログラム
         Player bom_check =mob.level().getNearestPlayer(mob, 8);
-        int Random = mob.getRandom().nextInt(200);
-        if(bom_check != null && Random == 0 && bomb_cool == 0){
+        Random = mob.getRandom().nextInt(10);
+        if(Random == 0){
+            kamase = 1;
+        }
+        if(bom_check != null && Random == 0 && kamase == 1){
         //TNT設置プログラムを書く
             Level level = mob.level();
             BlockPos pos = mob.blockPosition().above(1);
             PrimedTnt tnt = new PrimedTnt(level, pos.getX(), pos.getY(), pos.getZ(), null);
             level.addFreshEntity(tnt);
             bomb_cool = 200;
+            kamase = 0;
         }
         brake_time = brake_time-1;
         street_brake_time = street_brake_time-1;
