@@ -1,4 +1,6 @@
 {
   "item.mobzking.midkit":"midkit",
-  "item.mobzking.bandage":"bandage"
+  "item.mobzking.bandage":"bandage",
+  "item.mobzking.seimei":"testname",
+  "item.mobzking.seimei_null":"testname"
 }

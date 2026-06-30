@@ -1,6 +1,7 @@
 package com.mobzking.touroku;
 import com.mobzking.Item.CureItem;
 import com.mobzking.Item.HealItem;
+import com.mobzking.Item.some_bahItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -13,4 +14,9 @@ public class Item_registry {
     //出血直しアイテム
     public static final RegistryObject<Item> BAND_AGE = ITEMS.register("bandage",
             () -> new CureItem(new Item.Properties().stacksTo(4)));
+    //プレイヤー強化アイテム（）
+    public static final RegistryObject<Item> SEIMEI = ITEMS.register("seimei",
+            () -> new some_bahItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> SEIMEI_NULL = ITEMS.register("seimei_null",
+            () -> new Item(new Item.Properties().stacksTo(1)));
 }
