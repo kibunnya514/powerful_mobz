@@ -1,4 +1,4 @@
-package com.mobzking.Player_something;
+package com.mobzking.Player;
 
 import com.mobzking.touroku.Item_registry;
 import net.minecraft.world.effect.MobEffectInstance;

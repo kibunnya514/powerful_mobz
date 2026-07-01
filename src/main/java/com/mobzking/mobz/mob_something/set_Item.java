@@ -1,4 +1,4 @@
-package com.mobzking.mob_something;
+package com.mobzking.mobz.mob_something;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Zombie;

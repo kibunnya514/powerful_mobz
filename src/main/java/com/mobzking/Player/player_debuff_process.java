@@ -1,4 +1,4 @@
-package com.mobzking.Player_something;
+package com.mobzking.Player;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.monster.Monster;

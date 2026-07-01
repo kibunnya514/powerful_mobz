@@ -1,4 +1,4 @@
-package com.mobzking.Player_something;
+package com.mobzking.Player;
 
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.world.entity.player.Player;

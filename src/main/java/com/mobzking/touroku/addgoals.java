@@ -1,9 +1,9 @@
 package com.mobzking.touroku;
 
-import com.mobzking.mobz_AI.brake_block;
-import com.mobzking.mobz_AI.chace;
-import com.mobzking.mobz_AI.set_block;
-import com.mobzking.mobz_AI.skelton_chace;
+import com.mobzking.mobz.mobz_AI.brake_block;
+import com.mobzking.mobz.mobz_AI.chace;
+import com.mobzking.mobz.mobz_AI.set_block;
+import com.mobzking.mobz.mobz_AI.skelton_chace;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraftforge.event.entity.living.MobSpawnEvent;

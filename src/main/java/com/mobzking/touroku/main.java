@@ -1,11 +1,11 @@
 package com.mobzking.touroku;
 
-import com.mobzking.Player_something.bleeding_effect;
-import com.mobzking.Player_something.player_debuff_process;
-import com.mobzking.Player_something.player_tick_process;
-import com.mobzking.mob_something.mob_level;
-import com.mobzking.mob_something.not_damage_TNT;
-import com.mobzking.mob_something.set_Item;
+import com.mobzking.Player.bleeding_effect;
+import com.mobzking.Player.player_debuff_process;
+import com.mobzking.Player.player_tick_process;
+import com.mobzking.mobz.mob_something.mob_level;
+import com.mobzking.mobz.mob_something.not_damage_TNT;
+import com.mobzking.mobz.mob_something.set_Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
