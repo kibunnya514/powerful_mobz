@@ -37,7 +37,9 @@ public class player_tick_process {
                 stack -> stack.getItem() == Item_registry.SEIMEI_NULL.get()
         );
         if (check == 1 && whick1) {
-            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION,40,1));
+            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION,-1,1));
+        }else{
+            player.removeEffect(MobEffects.REGENERATION);
         }
         // 衝撃吸収とかなんとか
         boolean which2 = player.getInventory().hasAnyMatching(
