@@ -20,13 +20,12 @@ public class player_tick_process {
         var data = player.getPersistentData();
         // 出血処理
         int bleeding = data.getInt("bleeding");
-        if (bleeding > 0 && player.tickCount % 40 == 0) {
-            player.hurt(player.damageSources().generic(), 2.0F);
+        if (bleeding > 0 && player.tickCount % 80 == 0) {
+            player.hurt(player.damageSources().generic(), 1.0F);
             data.putInt("bleeding", bleeding - 1);
         }
         // 回復処理
         int healing = data.getInt("healing");
-
         if (healing > 0 && player.tickCount % 20 == 0) {
             player.heal(2.0F);
             data.putInt("healing", healing - 1);
@@ -50,6 +49,8 @@ public class player_tick_process {
                 player.setAbsorptionAmount(8.0F);
                 cooldown = 400;
             }
+        }else {
+            player.setAbsorptionAmount(0);
         }
         if (cooldown > 0) {
             cooldown--;

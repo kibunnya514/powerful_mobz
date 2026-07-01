@@ -4,6 +4,7 @@ import com.mobzking.Player_something.bleeding_effect;
 import com.mobzking.Player_something.player_debuff_process;
 import com.mobzking.Player_something.player_tick_process;
 import com.mobzking.mob_something.mob_level;
+import com.mobzking.mob_something.not_damage_TNT;
 import com.mobzking.mob_something.set_Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -19,6 +20,7 @@ public class main {
         MinecraftForge.EVENT_BUS.register(new player_tick_process());
         MinecraftForge.EVENT_BUS.register(new player_debuff_process());
         MinecraftForge.EVENT_BUS.register(new bleeding_effect());
+        MinecraftForge.EVENT_BUS.register(new not_damage_TNT());
         Item_registry.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 }

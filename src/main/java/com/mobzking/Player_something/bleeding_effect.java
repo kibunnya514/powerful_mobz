@@ -12,14 +12,12 @@ public class bleeding_effect {
 
     @SubscribeEvent
     public static void onTick(TickEvent.PlayerTickEvent event) {
-
+        //未来の俺へ、プレイヤーNBTにbleedingの変数、切り替えておいてね。よろしく
         Player player = event.player;
         //下二行は１ティック４回処理を消すプログラム
         if (event.phase != TickEvent.Phase.END) return;
         if (!player.level().isClientSide()) return;
-
-        if (player_debuff_process.bleeding > 0) {
-
+        if (player_debuff_process.bleeding > 0){
             Vector3f bloodColor = new Vector3f(1.0f, 0.1f, 0.1f);
             DustParticleOptions blood = new DustParticleOptions(bloodColor, 1.0f);
                 player.level().addParticle(
