@@ -24,5 +24,5 @@ public class Item_registry {
     public static final RegistryObject<Item> SYOGEKI_NULL = ITEMS.register("syogeki_null",
             () -> new Item(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> REPAIR = ITEMS.register("repair",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new Item(new Item.Properties().stacksTo(64)));
 }

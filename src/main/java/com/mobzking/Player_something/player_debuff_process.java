@@ -13,7 +13,7 @@ public class player_debuff_process {
     public static void player_hurt(LivingHurtEvent event){
         Entity check_monster = event.getSource().getEntity();
         if(check_monster instanceof Monster){
-            int Random = ((Monster) check_monster).getRandom().nextInt(1);
+            int Random = ((Monster) check_monster).getRandom().nextInt(10);
             if(Random == 0){
                 Player player = (Player) event.getEntity();
                 CompoundTag data = player.getPersistentData();

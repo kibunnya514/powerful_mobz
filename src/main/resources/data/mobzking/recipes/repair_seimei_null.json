@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " R ",
+    "RAR",
+    " R "
+  ],
+  "key": {
+    "A": {
+      "item": "mobzking:seimei_null"
+    },
+    "R": {
+      "item": "mobzking:repair"
+    }
+  },
+  "result": {
+    "item": "mobzking:seimei",
+    "count": 1
+  }
+}
