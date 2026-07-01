@@ -1,4 +1,4 @@
-package com.mobzking.mob_something;
+package com.mobzking.mobz.mob_something;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -11,7 +11,9 @@ public class not_damage_TNT {
         @SubscribeEvent
         public static void onHurt(LivingHurtEvent event) {
             if(event.getEntity() instanceof Monster mob && event.getSource().is(DamageTypes.EXPLOSION)){
-                event.setCanceled(true);
+                float damage = event.getAmount();
+                float exdamage = damage * 0.1F;
+                event.setAmount(exdamage);
             }
         }
     }
