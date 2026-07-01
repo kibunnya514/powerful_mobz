@@ -20,14 +20,14 @@ public class set_Item {
             Level time_day = mobitem_set.level();
             int sokoage = 0;
             long day = time_day.getLevelData().getGameTime() / 24000L;
-            long mob_armoradd = day;//序盤は今日装備の確率
+            long mob_armoradd = (long) (day*0.8);//序盤は今日装備の確率
             if (mob_armoradd >= 100) {
                 sokoage = (int) (mob_armoradd - 100) / 5 + 5;//時間経過で革装備などの低ランク装備が出にくくなる
             }
             int sord = 0;
             sord = mobitem_set.getRandom().nextInt(5);
             if (sord == 0) {
-                int wh = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 70 + sokoage;
+                int wh = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 40 + sokoage;
                 if (wh < 0) {
                     wh = wh + mobitem_set.getRandom().nextInt(55 + (int) mob_armoradd);
                 }
@@ -45,7 +45,7 @@ public class set_Item {
             }
 
             if (sord == 1) {
-                int wh = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 70 + sokoage;
+                int wh = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 40 + sokoage;
                 if (wh < 0) {
                     wh = wh + mobitem_set.getRandom().nextInt(55 + (int) mob_armoradd);
                 }
@@ -62,7 +62,7 @@ public class set_Item {
                 }
             }
 
-            int head = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 70 + sokoage;
+            int head = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 40 + sokoage;
             if (head < 0) {
                 head = head + mobitem_set.getRandom().nextInt(55 + (int) mob_armoradd);
                 ;
@@ -81,7 +81,7 @@ public class set_Item {
                 mobitem_set.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.LEATHER_HELMET));
             }
 
-            int chest = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 70 + sokoage;
+            int chest = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 40 + sokoage;
             if (chest < 0) {
                 chest = chest + mobitem_set.getRandom().nextInt(55 + (int) mob_armoradd);
                 ;
@@ -100,7 +100,7 @@ public class set_Item {
                 mobitem_set.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.LEATHER_CHESTPLATE));
             }
 
-            int legs = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 70 + sokoage;
+            int legs = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 40 + sokoage;
             if (legs < 0) {
                 legs = legs + mobitem_set.getRandom().nextInt(55 + (int) mob_armoradd);
                 ;
@@ -119,7 +119,7 @@ public class set_Item {
                 mobitem_set.setItemSlot(EquipmentSlot.LEGS, new ItemStack(Items.LEATHER_LEGGINGS));
             }
 
-            int feet = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 70 + sokoage;
+            int feet = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 40 + sokoage;
             if (feet < 0) {
                 feet = feet + mobitem_set.getRandom().nextInt(55 + (int) mob_armoradd);
                 ;
@@ -143,7 +143,7 @@ public class set_Item {
             ItemStack chest_en = mobitem_set.getItemBySlot(EquipmentSlot.CHEST);
             ItemStack legs_en = mobitem_set.getItemBySlot(EquipmentSlot.LEGS);
             ItemStack feet_en = mobitem_set.getItemBySlot(EquipmentSlot.FEET);
-            int which = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 70 + sokoage;
+            int which = mobitem_set.getRandom().nextInt(100 + (int) mob_armoradd) - 40 + sokoage;
             int number = 0;
             int TF = 0;
             TF = mobitem_set.getRandom().nextInt(3);
