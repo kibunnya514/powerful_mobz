@@ -1,6 +1,5 @@
 package com.mobzking.touroku;
 
-import com.mobzking.Player.bleeding_effect;
 import com.mobzking.Player.new_player;
 import com.mobzking.Player.player_debuff_process;
 import com.mobzking.Player.player_tick_process;
@@ -20,7 +19,6 @@ public class main {
         MinecraftForge.EVENT_BUS.register(new mob_level());
         MinecraftForge.EVENT_BUS.register(new player_tick_process());
         MinecraftForge.EVENT_BUS.register(new player_debuff_process());
-        MinecraftForge.EVENT_BUS.register(new bleeding_effect());
         MinecraftForge.EVENT_BUS.register(new not_damage_TNT());
         MinecraftForge.EVENT_BUS.register(new new_player());
         Item_registry.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
