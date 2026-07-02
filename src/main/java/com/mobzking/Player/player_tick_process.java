@@ -34,12 +34,11 @@ public class player_tick_process {
             double y = player.getY() + 1.0;
             double z = player.getZ();
 
-            // ── 血しぶき（赤ダスト） ──
+            //（赤ダスト）
             for (int i = 0; i < 15; i++) {
                 double ox = (rand.nextDouble() - 0.5) * 0.6;
                 double oy = rand.nextDouble() * 0.8;
                 double oz = (rand.nextDouble() - 0.5) * 0.6;
-
                 level.sendParticles(
                         new DustParticleOptions(new Vector3f(0.8F, 0.0F, 0.0F), 1.1F),
                         x + ox,
