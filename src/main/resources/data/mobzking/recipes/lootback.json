@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "GAG",
+    "AAA"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:raw_gold_block"
+    },
+    "A": {
+      "tag": "minecraft:logs"
+    }
+  },
+  "result": {
+    "item": "mobzking:lootback",
+    "count": 1
+  }
+}

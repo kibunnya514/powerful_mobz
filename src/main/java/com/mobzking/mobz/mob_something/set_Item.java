@@ -1,6 +1,7 @@
 package com.mobzking.mobz.mob_something;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -18,6 +19,7 @@ public class set_Item {
     public static void onSpawn(MobSpawnEvent.FinalizeSpawn event) {
         LivingEntity mobitem_set = event.getEntity();
             Level time_day = mobitem_set.level();
+            if(!(mobitem_set instanceof Monster)) return;
             int sokoage = 0;
             long day = time_day.getLevelData().getGameTime() / 24000L;
             long mob_armoradd = (long) (day*0.8);//序盤は今日装備の確率

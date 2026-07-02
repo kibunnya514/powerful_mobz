@@ -51,7 +51,7 @@ public class brake_block extends Goal {
         }
         //爆弾設置プログラム
         Player bom_check =mob.level().getNearestPlayer(mob, 4);
-        Random = mob.getRandom().nextInt(100);
+        Random = mob.getRandom().nextInt(200);
         if(Random == 0){
             kamase = 1;
         }

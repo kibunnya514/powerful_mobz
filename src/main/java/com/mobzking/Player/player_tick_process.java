@@ -65,7 +65,7 @@ public class player_tick_process {
                     stack -> stack.getItem() == Item_registry.SEIMEI_NULL.get()
             );
             if (check == 1 && whick1) {
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, -1, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, -1, 0));
             } else {
                 player.removeEffect(MobEffects.REGENERATION);
             }

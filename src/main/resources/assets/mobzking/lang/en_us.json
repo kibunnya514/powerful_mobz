@@ -1,9 +1,11 @@
 {
   "item.mobzking.midkit":"midkit",
   "item.mobzking.bandage":"bandage",
-  "item.mobzking.seimei":"testname",
-  "item.mobzking.seimei_null":"testname",
-  "item.mobzking.syogeki":"testname",
-  "item.mobzking.syogeki_null":"testname",
-  "item.mobzking.newlife": "somelife"
+  "item.mobzking.seimei":"RelicofLife",
+  "item.mobzking.seimei_null":"RelicofLife",
+  "item.mobzking.syogeki":"ShockingRelic",
+  "item.mobzking.syogeki_null":"ShockingRelic",
+  "item.mobzking.newlife": "lifestone",
+  "item.mobzking.repair":"repairkit",
+  "item.mobzking.lootback":"lootback"
 }

@@ -1,5 +1,4 @@
 package com.mobzking.Item;
-
 import com.mobzking.touroku.Item_registry;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -9,9 +8,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-
-public class some_bahItem extends Item {
-    public some_bahItem(Properties properties) {
+public class lootback extends Item {
+    public lootback(Properties properties) {
         super(properties);
     }
     @Override
@@ -20,7 +18,7 @@ public class some_bahItem extends Item {
     }
     @Override
     public int getUseDuration(ItemStack stack) {
-        return 60;
+        return 100;
     }
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
@@ -31,16 +29,12 @@ public class some_bahItem extends Item {
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
 
         if (!level.isClientSide && entity instanceof Player player) {
-            //行われる処理
-            //生命の何か
-            System.out.print("アイテムチェック");
-            if (stack.is(Item_registry.SEIMEI.get())){
-                player.getPersistentData().putInt("wear", 1);
-                stack = new ItemStack(Item_registry.SEIMEI_NULL.get());
+            int random = entity.getRandom().nextInt(2);
+            if (random == 0) {
+                stack = new ItemStack(Item_registry.SYOGEKI.get());
                 player.getInventory().add(stack);
-            }else if(stack.is(Item_registry.SYOGEKI.get())){
-                player.getPersistentData().putInt("wear", 2);
-                stack = new ItemStack(Item_registry.SYOGEKI_NULL.get());
+            }else if (random == 1) {
+                stack = new ItemStack(Item_registry.SEIMEI.get());
                 player.getInventory().add(stack);
             }
             stack.shrink(1);
@@ -48,3 +42,4 @@ public class some_bahItem extends Item {
         return stack;
     }
 }
+

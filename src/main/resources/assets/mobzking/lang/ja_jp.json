@@ -1,10 +1,12 @@
 {
   "item.mobzking.midkit":"救急キット",
   "item.mobzking.bandage":"包帯",
-  "item.mobzking.seimei":"未定な強化アイテム1",
-  "item.mobzking.seimei_null":"未定な強化アイテム２",
-  "item.mobzking.syogeki":"未定な強化アイテム3",
-  "item.mobzking.syogeki_null":"未定な強化アイテム4",
-  "item.mobzking.newlife":"生命の何ちゃら"
+  "item.mobzking.seimei":"生命力の遺物",
+  "item.mobzking.seimei_null":"生命力の遺物",
+  "item.mobzking.syogeki":"衝撃の遺物",
+  "item.mobzking.syogeki_null":"衝撃の遺物",
+  "item.mobzking.repair":"修復剤",
+  "item.mobzking.newlife":"生命の石",
+  "item.mobzking.lootback":"ルートバック"
 }
 
