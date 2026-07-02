@@ -1,6 +1,7 @@
 package com.mobzking.touroku;
 import com.mobzking.Item.CureItem;
 import com.mobzking.Item.HealItem;
+import com.mobzking.Item.new_life;
 import com.mobzking.Item.some_bahItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,4 +26,6 @@ public class Item_registry {
             () -> new Item(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> REPAIR = ITEMS.register("repair",
             () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final RegistryObject<Item> NEWLIFE = ITEMS.register("newlife",
+            () -> new new_life(new Item.Properties().stacksTo(64)));
 }
